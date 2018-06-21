@@ -69,7 +69,7 @@ public class BSTHashTableSet<T extends Comparable> implements HashTableSet<T> {
 
     @Override
     public int getBucketSize(int index) throws Exception {
-        if (index<0 || index>=buckets.length) throw new Exception("There is not such bucket!");
+        if (index<0 || index>=buckets.length) throw new Exception("There is no such bucket!");
         return buckets[index].getSize();
     }
 

@@ -3,6 +3,8 @@ package csci.impl;
 import csci152.adt.IntQueue;
 import csci152.adt.Queue;
 
+import java.util.Arrays;
+
 public class ArrayQueue<T> implements Queue<T> {
 
     private int front;
@@ -31,13 +33,14 @@ public class ArrayQueue<T> implements Queue<T> {
             size++;
             back=(back+1)%values.length;
         } else {
-            T[] temp = (T[])new Object[2*size];
-            int j=front;
-            for (int i=0; i <size;i++) {
-                temp[i] = values[j];
-                j=(j+1)%values.length;
-            }
-            values=temp;
+//            T[] temp = (T[])new Object[2*size];
+//            int j=front;
+//            for (int i=0; i <size;i++) {
+//                temp[i] = values[j];
+//                j=(j+1)%values.length;
+//            }
+            values = Arrays.copyOf(values, 2*size);
+//            values=temp;
             values[size]=value;
             back=size;
             size++;

@@ -3,6 +3,8 @@ package csci.impl;
 import csci152.adt.IntStack;
 import csci152.adt.Stack;
 
+import java.util.Arrays;
+
 public class ArrayStack<T> implements Stack<T> {
 
     private T[] values;
@@ -16,15 +18,16 @@ public class ArrayStack<T> implements Stack<T> {
 
     @Override
     public void push(T value) {
-        if (size>=10) {
-            T[] temporary = (T[]) new Object[2*size];
-            for (int i=0;i<size;i++) {
-                temporary[i]=values[i];
-            }
-            values = (T[])new Object[2*size];
-            for (int i=0;i<size;i++) {
-                values[i]=temporary[i];
-            }
+        if (size>=values.length) {
+//            T[] temporary = (T[]) new Object[2*size];
+//            for (int i=0;i<size;i++) {
+//                temporary[i]=values[i];
+//            }
+//            values = (T[])new Object[2*size];
+//            for (int i=0;i<size;i++) {
+//                values[i]=temporary[i];
+//            }
+            values = Arrays.copyOf(values, 2*size);
         }
         values[size]=value;
         size++;

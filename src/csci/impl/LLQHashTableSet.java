@@ -97,14 +97,14 @@ public class LLQHashTableSet<T> implements HashTableSet<T> {
 
     @Override
     public int getBucketSize(int index) throws Exception {
-        if (index<0 || index>=buckets.length) throw new Exception("There is not such bucket!");
+        if (index<0 || index>=buckets.length) throw new Exception("There is no such bucket!");
         return buckets[index].getSize();
     }
 
     @Override
     public double getLoadFactor() {
         if(buckets.length==0) return 0;
-        return size/buckets.length;
+        return ((double) size)/buckets.length;
     }
 
     @Override

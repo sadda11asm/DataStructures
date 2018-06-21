@@ -12,18 +12,8 @@ public class TestHashCode {
 
 
 //        lesson19TestLLQ(10);
-//        lesson19TestLLQ(100);
-//        lesson19TestBST(10);
-//        lesson19TestBST(100);
-
-
-//        lesson20TestLLQ(10);
-//        lesson20TestLLQ(100);
-//        lesson20TestLLQ(5000);
-//        lesson20TestBST(10);
-//        lesson20TestBST(100);
-        lesson20TestBST(5000);
-    }
+        lesson20TestLLQ(10);
+}
 
     public static void lesson19TestBST(int k) {
         HashTableSet<Student> set = new BSTHashTableSet<>(k);
@@ -59,7 +49,8 @@ public class TestHashCode {
 //            set.add(i);
 //        }
         for (int i=0;i<50000;i++) {
-            set.add(random.nextInt());
+//            set.add(random.nextInt());
+            set.add(1);
         }
 
         time2 = System.currentTimeMillis();
